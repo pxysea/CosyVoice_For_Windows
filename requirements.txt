@@ -30,3 +30,6 @@ fastapi-cli==0.0.4
 WeTextProcessing==1.0.3
 flask
 flask_cors
+modelscope
+hyperpyyaml
+huggingface-hub==0.25.2
