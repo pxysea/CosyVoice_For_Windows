@@ -104,9 +104,9 @@ class CosyVoice:
 
                 if new_dropdown != "无":
 
-                    newspk = torch.load(f'{grandparent_dir}/voices/{new_dropdown}.pt')
+                    newspk = torch.load(f'{grandparent_dir}/voices/{new_dropdown}.pt',weights_only=True)
                 else:
-                    newspk = torch.load(f'{grandparent_dir}/voices/{spk_id}.pt')
+                    newspk = torch.load(f'{grandparent_dir}/voices/{spk_id}.pt',weights_only=True)
 
                 model_input["flow_embedding"] = newspk["flow_embedding"] 
                 model_input["llm_embedding"] = newspk["llm_embedding"]

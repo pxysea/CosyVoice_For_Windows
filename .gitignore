@@ -50,3 +50,10 @@ pretrained_models/*
 
 py311/
 mac/
+
+third_party/WeTextProcessing*
+voices/*
+hf_download/*
+
+音频输出
+参考音频

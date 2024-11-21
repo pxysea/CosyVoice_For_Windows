@@ -4,7 +4,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import AvgPool1d, Conv1d, Conv2d, ConvTranspose1d
-from torch.nn.utils import remove_weight_norm, spectral_norm, weight_norm
+from torch.nn.utils import remove_weight_norm, spectral_norm
+# from torch.nn.utils import weight_norm  #fix_by_sivyer
+from torch.nn.utils.parametrizations import weight_norm
 
 from .xutils import get_padding, init_weights
 

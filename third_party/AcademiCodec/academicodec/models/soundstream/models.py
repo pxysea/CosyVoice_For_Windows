@@ -6,7 +6,8 @@ from academicodec.modules import NormConv2d
 from academicodec.utils import get_padding
 from torch.nn import AvgPool1d
 from torch.nn.utils import spectral_norm
-from torch.nn.utils import weight_norm
+# from torch.nn.utils import weight_norm  #fix_by_sivyer
+from torch.nn.utils.parametrizations import weight_norm
 
 LRELU_SLOPE = 0.1
 

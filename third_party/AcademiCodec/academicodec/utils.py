@@ -11,7 +11,8 @@ import numpy as np
 import torch
 import yaml
 from torch import distributed as dist
-from torch.nn.utils import weight_norm
+# from torch.nn.utils import weight_norm  #fix_by_sivyer
+from torch.nn.utils.parametrizations import weight_norm
 matplotlib.use("Agg")
 import matplotlib.pylab as plt
 import re

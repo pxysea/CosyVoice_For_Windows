@@ -7,7 +7,8 @@ from torch.nn import Conv2d
 from torch.nn import ConvTranspose1d
 from torch.nn.utils import remove_weight_norm
 from torch.nn.utils import spectral_norm
-from torch.nn.utils import weight_norm
+# from torch.nn.utils import weight_norm  #fix_by_sivyer
+from torch.nn.utils.parametrizations import weight_norm
 
 from academicodec.utils import get_padding
 from academicodec.utils import init_weights

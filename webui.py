@@ -29,7 +29,7 @@ from cosyvoice.utils.common import set_all_random_seed
 import shutil
 
 os.environ["no_proxy"] = "localhost, 127.0.0.1, ::1" 
-
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 
 inference_mode_list = ['预训练音色', '3s极速复刻', '跨语种复刻', '自然语言控制']
@@ -232,7 +232,7 @@ def generate_audio(tts_text, mode_checkbox_group, sft_dropdown, prompt_text, pro
             
 
 
-def main():
+def main(args):
     with gr.Blocks() as demo:
         gr.Markdown("### 代码库 [CosyVoice](https://github.com/FunAudioLLM/CosyVoice) \
                     预训练模型 [CosyVoice-300M](https://www.modelscope.cn/models/iic/CosyVoice-300M) \
@@ -295,7 +295,7 @@ def main():
                               
         mode_checkbox_group.change(fn=change_instruction, inputs=[mode_checkbox_group], outputs=[instruction_text])
     demo.queue(max_size=4, default_concurrency_limit=2)
-    demo.launch(server_name='0.0.0.0', server_port=args.port,inbrowser=True)
+    demo.launch(server_name='0.0.0.0',share=False, server_port=args.port,inbrowser=True)
 
 
 if __name__ == '__main__':
@@ -312,4 +312,4 @@ if __name__ == '__main__':
     sft_spk = cosyvoice.list_avaliable_spks()
     prompt_sr, target_sr = 16000, 22050
     default_data = np.zeros(target_sr)
-    main()
+    main(args)
